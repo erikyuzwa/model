@@ -1,9 +1,17 @@
 const Model = require('../index')
 
-test('default initialization should be defined', () => {
+test('empty initialization should be defined', () => {
   const foo = new Model()
   expect(foo).toBeDefined()
+  expect(foo.keys()).toEqual(['id'])
 })
+
+test('array initialization should be defined', () => {
+  const foo = new Model(['a', 'b', 'c'])
+  expect(foo).toBeDefined()
+  expect(foo.keys()).toEqual(['id', 'a', 'b', 'c'])
+})
+
 
 test('2 valid instances should have different ids', () => {
   const a = new Model({name: 'foo'})
@@ -27,9 +35,20 @@ test('valid setter with an invalid getter returns undefined', () => {
 test('valid attributes returns valid keys', () => {
   const foo = new Model({name: 'frank', address: 'main street'})
   expect(foo.keys()).toEqual(['id', 'name', 'address'])
-
 })
 
-
+test('valid callback is triggered with changed', () => {
+  const foo = new Model(['name'])
+  const handler = jest.fn()
+  foo.on('changed', handler)
+  foo.set('name', 'james')
+  expect(handler).toHaveBeenCalledTimes(1)
+  expect(handler).toHaveBeenCalledWith({
+    'name': {
+      'old': '',
+      'new': 'james'
+    }
+  })
+})
 
 
