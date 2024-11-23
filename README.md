@@ -2,7 +2,10 @@
 
 Because "Entity" was taken.
 
-This is a simple JavaScript Object wrapper.
+This is a simple JavaScript Object wrapper. Turns a given list into object attributes, and
+can handle some basic callback execution upon attributes being changed.
+
+Just have fun with it!
 
 ## installation
 
@@ -13,7 +16,11 @@ npm install model
 ## using
 
 ```
+// option (a) using require
 const Model = require('model')
+
+// option (b) using import
+import Model from 'model'
 
 // create a Model instance
 // each instance generates a unique-ish id
