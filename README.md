@@ -2,7 +2,13 @@
 
 Because "Entity" was taken.
 
-This is a simple JavaScript Object wrapper. 
+This is a simple JavaScript Object wrapper.
+
+## installation
+
+```
+npm install model
+```
 
 ## using
 
@@ -18,6 +24,9 @@ a.set('name': 'Scott Pilgrim')
 
 // get an attribute
 a.get('name') // "Scott Pilgrim"
+
+// get a list of the attributes
+a.keys() // ['id', 'name', 'address', 'city']
 
 // get the id
 a.id
