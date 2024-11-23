@@ -16,8 +16,12 @@ npm install model
 const Model = require('model')
 
 // create a Model instance
-// each instance has a unique-ish id
+// each instance generates a unique-ish id
+// can initialize with an Object of attributes
 const a = new Model({'name': '', 'address': '', 'city':''})
+
+// or can initialize with an Array of attribute names
+const a = new Model(['name', 'address', 'city'])
 
 // set an attribute
 a.set('name': 'Scott Pilgrim')
@@ -39,6 +43,6 @@ const handler = function (params) {
 // register the callback on this Model instance
 a.on('change', handler)
 
-// somewhere else in your app...
+// when you update an attribute, the handler is fired!
 a.set('name', 'James Bond')
 ```
