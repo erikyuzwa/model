@@ -12,8 +12,19 @@
   "files": [
     "dist"
   ],
-  "keywords": [],
-  "author": "Erik Yuzwa <erikyuzwa@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url" : "git+https://github.com/erikyuzwa/model.git"
+  },
+  "keywords": [
+    "model",
+    "view",
+    "controller"
+  ],
+  "author": {
+    "name": "Erik Yuzwa",
+    "email": "erikyuzwa@gmail.com"
+  },
   "license": "MIT",
   "description": "because entity was taken",
   "devDependencies": {
