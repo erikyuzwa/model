@@ -10,7 +10,7 @@ Just have fun with it!
 ## installation
 
 ```
-npm install model
+npm install @erikyuzwa/model
 ```
 
 ## using
