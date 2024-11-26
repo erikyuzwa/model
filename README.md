@@ -31,16 +31,16 @@ const a = new Model({'name': '', 'address': '', 'city':''})
 const a = new Model(['name', 'address', 'city'])
 
 // set an attribute
-a.set('name': 'Scott Pilgrim')
+a.name = 'Scott Pilgrim'
 
 // get an attribute
-a.get('name') // "Scott Pilgrim"
-
-// get a list of the attributes
-a.keys() // ['id', 'name', 'address', 'city']
+a.name // "Scott Pilgrim"
 
 // get the id
 a.id
+
+// get a list of the attributes
+Object.keys(a) // ['id', 'name', 'address', 'city']
 
 // register a callback for an attribute change
 const handler = function (params) {
@@ -51,5 +51,5 @@ const handler = function (params) {
 a.on('change', handler)
 
 // when you update an attribute, the handler is fired!
-a.set('name', 'James Bond')
+a.name = 'James Bond'
 ```
